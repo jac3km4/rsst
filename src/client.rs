@@ -18,7 +18,7 @@ impl RssRequest {
         Ok(Self { req })
     }
 
-    pub async fn exec<'a>(self) -> Result<RssResponse, RssError> {
+    pub async fn exec(self) -> Result<RssResponse, RssError> {
         let mut resp = self.req.exec().await.map_err(RssError::Http)?;
 
         if (200..300).contains(&resp.status_code()) {
@@ -44,6 +44,17 @@ pub struct RssResponse {
     #[borrows(document)]
     #[covariant]
     pub feed: Feed<'this>,
+}
+
+impl RssResponse {
+    pub fn from_string(str: String) -> Result<Self, RssError> {
+        RssResponseTryBuilder {
+            body: str.into_boxed_str(),
+            document_builder: |str| Document::parse(str).map_err(RssError::XmlParse),
+            feed_builder: |doc| from_doc(doc).map_err(RssError::XmlDecode),
+        }
+        .try_build()
+    }
 }
 
 #[derive(Debug)]

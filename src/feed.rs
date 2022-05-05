@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use time::{format_description, OffsetDateTime};
 
 #[derive(Debug, Deserialize)]
@@ -29,6 +29,8 @@ pub struct Item<'a> {
     pub pub_date: Option<PubDate>,
     #[serde(rename = "content")]
     pub content: Option<&'a str>,
+    #[serde(rename = "$ns:encoded")]
+    pub content_encoded: Option<&'a str>,
     #[serde(rename = "$ns:content", default)]
     pub media: Vec<MediaContent<'a>>,
 }
@@ -38,14 +40,14 @@ pub struct Guid<'a> {
     #[serde(rename = "$text")]
     pub value: &'a str,
     #[serde(rename = "isPermaLink")]
-    pub is_perma_link: bool,
+    pub is_perma_link: Option<bool>,
 }
 
 #[derive(Debug, Deserialize)]
 pub struct Enclosure<'a> {
     pub url: &'a str,
-    pub length: u32,
-    pub mime_type: &'a str,
+    pub length: Option<u32>,
+    pub mime_type: Option<&'a str>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -83,17 +85,5 @@ impl<'de> Deserialize<'de> for PubDate {
         let res = time::OffsetDateTime::parse(str, &format_description::well_known::Rfc2822)
             .map_err(serde::de::Error::custom)?;
         Ok(PubDate(res))
-    }
-}
-
-impl Serialize for PubDate {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        self.0
-            .format(&format_description::well_known::Rfc2822)
-            .map_err(serde::ser::Error::custom)?
-            .serialize(serializer)
     }
 }

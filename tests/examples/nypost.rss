@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+		
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:media="http://search.yahoo.com/mrss/"
+		>
+
+<channel>
+	<title>New York Post</title>
+	<atom:link href="https://nypost.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nypost.com</link>
+	<description>Your source for breaking news, news about New York, sports, business, entertainment, opinion, real estate, culture, fashion, and more.</description>
+	<lastBuildDate>Thu, 05 May 2022 18:02:08 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6.8</generator>
+			<item>
+			<title>Model attacked by blood-sucking beach bugs — still covered in bumps months later</title>
+			<comments>https://nypost.com/2022/05/05/model-attacked-by-beach-bugs-covered-in-bumps-months-later/#respond</comments>
+			<pubDate>Thu, 05 May 2022 13:53:49 -0400</pubDate>
+
+				<dc:creator>Asia Grace</dc:creator>
+			
+				<content:encoded><![CDATA["You just can't stop scratching until you rip the skin and even though the skin is ripped, you can't feel any pain because you're that itchy,” she said.]]></content:encoded>
+									<enclosure url="https://nypost.com/wp-content/uploads/sites/2/2022/05/bugs.jpg?quality=90&#038;strip=all" type="image/jpeg" />
+									<slash:comments>0</slash:comments>
+			
+		<media:content url="https://nypost.com/wp-content/uploads/sites/2/2022/05/reality-bites-a-824922.jpg?w=1024" medium="image">
+			<media:title type="html">Chelsie Gold was attack by microscopic, bloodsucking sandflies, which left her body covered in scars and scabs for months. </media:title>
+		</media:content>
+
+		<media:content url="https://nypost.com/wp-content/uploads/sites/2/2022/05/reality-bites-a-824923.jpg?w=576" medium="image">
+			<media:title type="html">Months later, Gold is still suffering with blemishes from the attack. </media:title>
+		</media:content>
+
+		<media:content url="https://nypost.com/wp-content/uploads/sites/2/2022/05/reality-bites-a-824926.jpg?w=819" medium="image">
+			<media:title type="html">Gold had no idea that the black specs on her body were actually sandflies, biting into her flesh.</media:title>
+		</media:content>
+
+		<media:content url="https://nypost.com/wp-content/uploads/sites/2/2022/05/reality-bites-a-824927.jpg?w=820" medium="image">
+			<media:title type="html">Chelsie Gold was attacked by microscopic, bloodsucking sand flies, which left her body covered in scars and scabs for months.</media:title>
+		</media:content>
+
+		<media:content url="https://nypost.com/wp-content/uploads/sites/2/2022/05/reality-bites-a-824925.jpg?w=819" medium="image">
+			<media:title type="html">Although Gold doesn&#039;t want to hamper anyone&#039;s beach fun, she warns vacationers to be mindful of the tiny creepy-crawlies. </media:title>
+		</media:content>
+		</item>
+		</channel>
+</rss>
