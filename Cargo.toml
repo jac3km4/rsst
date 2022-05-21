@@ -1,6 +1,6 @@
 [package]
 name = "rsst"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]
@@ -8,13 +8,9 @@ serde = { version = "1.0", features = ["derive"] }
 roxmltree-serde = { git = "https://github.com/jac3km4/roxmltree-serde.git", rev = "v0.1.0" }
 time = { version = "0.3", features = ["parsing", "formatting"] }
 ouroboros = { version = "0.15", optional = true }
-
-[dependencies.generic-async-http-client]
-version = "0.3"
-features = ["use_hyper"]
-default-features = false
-optional = true
+hyper = { version = "0.14", features = ["http1", "http2", "client", "runtime" ], optional = true }
+hyper-rustls = { version = "0.23", features = ["http2"], optional = true }
 
 [features]
-client = ["dep:generic-async-http-client", "dep:ouroboros"]
-rustls = ["generic-async-http-client?/rustls"]
+client = ["dep:hyper", "dep:hyper-rustls", "dep:ouroboros"]
+rustls = ["dep:hyper-rustls"]
